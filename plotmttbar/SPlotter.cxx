@@ -1666,7 +1666,8 @@ void SPlotter::DrawLegend(vector<SHist*> hists)
     top = 0.78;
   }
 
-  ysize = 0.06*4;
+  //  ysize = 0.06*4;
+  ysize = 0.06*5;
   TLegend *leg = new TLegend(xleft,top-ysize,xright,top, NULL,"brNDC");
   leg->SetFillColor(0);
   leg->SetLineColor(1);
@@ -1676,7 +1677,7 @@ void SPlotter::DrawLegend(vector<SHist*> hists)
   if (bSingleEPS) leg->SetTextSize(0.05);
 
   // do the ordering by hand
-  cout << "warning: plotting legend - check if ordering is ok (by hand, line 1530 in SPlotter!" << endl;
+  cout << "warning: plotting legend - check if ordering is ok (by hand, line 1680 in SPlotter!" << endl;
   //Int_t j[] = {0, 4, 1, 2, 3, 5, 6}; // dilepton
   //Int_t j[] = {0, 2, 1, 3, 4}; // CMSTT
   Int_t j[] = {0, 7, 1, 2, 3, 4, 5, 6, 8, 9}; // l+jets case
@@ -1696,12 +1697,14 @@ void SPlotter::DrawLegend(vector<SHist*> hists)
     int marker = sh->GetHist()->GetMarkerStyle();
     int lstyle = sh->GetHist()->GetLineStyle();
 
-    if (legtitle=="W+light") continue; //legtitle = "W(#rightarrow l #nu)+jets";
+    // if (legtitle=="W+light") continue; //legtitle = "W(#rightarrow l #nu)+jets";
+    if (legtitle=="W+light") legtitle = "W(#rightarrow l #nu)+jets";
     if (legtitle=="W+c") continue;
     if (legtitle=="W+b") continue;
     if (legtitle=="single-top") legtitle = "Other";
     if (legtitle=="Z+jets") continue;
     if (legtitle=="diboson") continue;
+    if (legtitle=="qcd-mu") continue;
 
     legtitle.ReplaceAll("TeV 1%", "TeV, 1%");
     legtitle.Prepend(" ");
@@ -2143,7 +2146,8 @@ void SPlotter::GeneralCosmetics(TH1* hist)
   TString ytitle = "Events";
   Double_t w = hist->GetXaxis()->GetBinWidth(1);
   if (w==99) w = 100;
-  TString title = hist->GetTitle();
+  //  TString title = hist->GetTitle();
+  TString title = hist->GetXaxis()->GetTitle();
   if (title.Contains("GeV")){
     ytitle = TString::Format("Events / %i GeV", (Int_t) w);
   }
@@ -2151,7 +2155,7 @@ void SPlotter::GeneralCosmetics(TH1* hist)
   hist->GetYaxis()->SetTitle(ytitle);  
   
   // set X-axis title
-  hist->GetXaxis()->SetTitle(hist->GetTitle()); 
+  //hist->GetXaxis()->SetTitle(hist->GetTitle()); 
 
   hist->SetTitle("");
 
