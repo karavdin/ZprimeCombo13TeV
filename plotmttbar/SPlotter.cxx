@@ -281,6 +281,19 @@ void SPlotter::Cleanup()
     delete m_can;
     m_can = NULL;
   }
+  if(m_ps){
+    delete m_ps;
+    m_ps = NULL;
+  }
+  // if(m_pad1){
+  //   delete m_pad1;
+  //   m_pad1 = NULL;
+  // }
+  // if(m_pad2){
+  //   delete m_pad2;
+  //   m_pad2 = NULL;
+  // }
+
 }
 
 void SPlotter::SetupCanvas()
@@ -1006,7 +1019,7 @@ void SPlotter::DrawSysError(SHist* stack)
   eAsym->SetLineWidth(1);
   eAsym->SetFillStyle(3245);
   eAsym->Draw("E2 same");
-
+  //  delete eAsym;
 
 }
 

@@ -1,7 +1,8 @@
 SteerPlotter(){
   
   // steering for the plotter
-  fCycleName     = "/nfs/dust/cms/user/karavdia/ttbar_semilep_13TeV/RunII_80X_v3/ttbarLJAnalysis/TTbarLJAnalysisLiteModule_NOTBLINDED_20180331_JERhybrid_topptReweight_oldMuonSF_toptagMLE3/T1_v06/unblinded/ele_theta_wFlatShapeSyst_wTopPtrewSymSyst_allVars_addPDF_T01_addedPDF_addedQ2.root";
+  fCycleName     = "/nfs/dust/cms/user/karavdia/ttbar_semilep_13TeV/RunII_80X_v3/ttbarLJAnalysis/TTbarLJAnalysisLiteModule_NOTBLINDED_20180329_JERhybrid_topptReweight_oldMuonSF_toptagMLE3/T1_v06/ele_theta_wFlatShapeSyst_wTopPtrewSymSyst_allVars.root";
+//  fCycleName     = "/nfs/dust/cms/user/karavdia/ttbar_semilep_13TeV/RunII_80X_v3/ttbarLJAnalysis/TTbarLJAnalysisLiteModule_NOTBLINDED_20180329_JERhybrid_topptReweight_oldMuonSF_toptagMLE3/T1_v06/elec/ele_theta_wFlatShapeSyst_min200_20bins_wTopPtrewSymSyst_rebinned_addedPDF_addedQ2.root";
   fInputFiles    = "  DATA,           wjets_c,        wjets_b   ,  ST,   DY,  wjets_l, ttbar,  Zprime1500, Zprime3000";
   fSampleNames   = "  Data,         W+c,       W+b   , single-top,   Z+jets,   W+light, t #bar t,  Z'_1.5_TeV_1%_width , Z'_3.0_TeV_1%_width ";
   fSamplesWeight = "  1.0 ,           0.814,    0.814   ,      1.013 ,    0.814 ,      0.855, 0.962, 1.00,       1.00 "; // W+jets scaled down by q2 scale uncertainty
@@ -16,7 +17,7 @@ SteerPlotter(){
   fSysUncWeight   = "0.578, 0.137, 0.137,0.153,0.489,0.166,0.929,0.163,0.167,0.172,0.753,0.876,0.967,0.173,0.197,0.629, 0.919,0.650,0.541,0.985,0.645,0.181,0.384,0.119,0.164";
 
 
-  fOutputPsFile = "/afs/desy.de/user/k/karavdia/www/Zprime_plots/PAPER_EG_plots_unblinded/RunII2016_ljets_EG_.ps";
+  fOutputPsFile = "/afs/desy.de/user/k/karavdia/www/Zprime_plots/PAPER_EG_plots_woPDF/RunII2016_ljets_EG_.ps";
 
   bRatioPlot = true;   // plot ratio histograms?
 //bZScoreInRatio = false;   // plot z-score instead of usual ratio

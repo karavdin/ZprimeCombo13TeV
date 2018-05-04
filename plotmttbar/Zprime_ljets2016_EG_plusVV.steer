@@ -1,13 +1,13 @@
 SteerPlotter(){
   
   // steering for the plotter
-  fCycleName     = "/nfs/dust/cms/user/karavdia/ttbar_semilep_13TeV/RunII_80X_v3/ttbarLJAnalysis/TTbarLJAnalysisLiteModule_NOTBLINDED_20180331_JERhybrid_topptReweight_oldMuonSF_toptagMLE3/T1_v06/unblinded/ele_theta_wFlatShapeSyst_wTopPtrewSymSyst_allVars_addPDF_T01_addedPDF_addedQ2.root";
-  fInputFiles    = "  DATA,           wjets_c,        wjets_b   ,  ST,   DY,  wjets_l, ttbar,  Zprime1500, Zprime3000";
-  fSampleNames   = "  Data,         W+c,       W+b   , single-top,   Z+jets,   W+light, t #bar t,  Z'_1.5_TeV_1%_width , Z'_3.0_TeV_1%_width ";
-  fSamplesWeight = "  1.0 ,           0.814,    0.814   ,      1.013 ,    0.814 ,      0.855, 0.962, 1.00,       1.00 "; // W+jets scaled down by q2 scale uncertainty
-  fSamplesUnc    = "  0.0 ,           0.14,      0.14   ,      0.40 ,     0.14,    0.047, 0.025,    0.0,     0.0 ";
-  fHistColors    = "  1   ,            400,       400   ,       400 ,      400,       413,  810,     ,860, 880 "; //628
-  fHistMarkers   = " 20   ,           0,       0,         0   ,         0 ,       0 ,         0,     ,-1     -1 ";
+  fCycleName     = "/nfs/dust/cms/user/karavdia/ttbar_semilep_13TeV/RunII_80X_v3/ttbarLJAnalysis/TTbarLJAnalysisLiteModule_NOTBLINDED_20180331_JERhybrid_topptReweight_oldMuonSF_toptagMLE3/T1_v06/unblinded/ele_theta_wFlatShapeSyst_wTopPtrewSymSyst_allVars_addPDF_T01_VV_addedPDF.root";
+  fInputFiles    = "  DATA,          wjets_c,        wjets_b   ,  ST,   DY,  wjets_l, ttbar,  Zprime1500, Zprime3000";
+  fSampleNames   = "  Data,        W+c,       W+b   , single-top,   Z+jets,   W+light, t #bar t,  Z'_1.5_TeV_1%_width , Z'_3.0_TeV_1%_width ";
+  fSamplesWeight = "  1.0 ,           1.25,    1.25   ,      0.0861 ,    1.25 ,      0.855, 0.955, 1.00,       1.00 "; // W+jets scaled down by q2 scale uncertainty
+  fSamplesUnc    = "  0.0 ,           0.27,      0.27   ,      0.52 ,     0.27,    0.15, 0.19,    0.0,     0.0 ";
+  fHistColors    = "  1   ,           400,       400   ,       400 ,      400,       413,  810,     ,860, 880 "; //628
+  fHistMarkers   = " 20   ,        0,       0,         0   ,         0 ,       0 ,         0,     ,-1     -1 ";
 
 
   fSamplesToStack = "wjets_c, wjets_b, ST, DY, wjets_l, ttbar"; // the names of chains which you would like to stack (same as in input filenames)
@@ -16,7 +16,7 @@ SteerPlotter(){
   fSysUncWeight   = "0.578, 0.137, 0.137,0.153,0.489,0.166,0.929,0.163,0.167,0.172,0.753,0.876,0.967,0.173,0.197,0.629, 0.919,0.650,0.541,0.985,0.645,0.181,0.384,0.119,0.164";
 
 
-  fOutputPsFile = "/afs/desy.de/user/k/karavdia/www/Zprime_plots/PAPER_EG_plots_unblinded/RunII2016_ljets_EG_.ps";
+  fOutputPsFile = "/afs/desy.de/user/k/karavdia/www/Zprime_plots/PAPER_EG_plots_unblinded_elecMLE/RunII2016_ljets_EG_.ps";
 
   bRatioPlot = true;   // plot ratio histograms?
 //bZScoreInRatio = false;   // plot z-score instead of usual ratio

@@ -56,11 +56,13 @@ SHist::SHist(THStack* stack)
 SHist::~SHist()
 {
   if (m_hist){
-    m_hist->Delete();
+    //    m_hist->Delete();
+    delete m_hist;
     m_hist = NULL;
   }
   if (m_stack){
-    m_stack->Delete();
+    //    m_stack->Delete();
+    delete m_stack;
     m_stack = NULL;
   }
   if (m_asymme){

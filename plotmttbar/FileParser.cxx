@@ -399,19 +399,16 @@ TH1* FileParser::Rebin(TH1* hist, TString dirname)
   TString name(hist->GetName());
   TString title(hist->GetTitle());
 
-  if (name.Contains("mtt")) {
-    //  TH1* rebinned = hist->Rebin(2);
+  if (name.Contains("mtt") && !name.Contains("Mttbar_")) { //tmp for 2016 mu/e+jets 
     TH1* rebinned = hist->Rebin(2);
-    rebinned->GetXaxis()->SetRangeUser(0,3500);
+    return rebinned;
+  }
+  if (name.Contains("Mttbar_")) {
+    //    cout<<"Hi, I must be Mttbar distribution! "<<name<<endl;
+    //  TH1* rebinned = hist->Rebin(2);
+    TH1* rebinned = hist->Rebin(4);
+    rebinned->GetXaxis()->SetRangeUser(0,6000);
     rebinned->SetTitle("M_{t#bart} [GeV]");
-
-    if (name.BeginsWith("ele_T1B0_L1chi2lo_mtt")){
-      //cout << "e+jets, 1top, Name = " << name << endl;
-      //rebinned->SetBinContent(32,0);
-      //rebinned->SetBinContent(33,0);
-      //rebinned->SetBinContent(34,0);
-      //rebinned->SetBinContent(35,0);
-    }
     return rebinned;
   }
 

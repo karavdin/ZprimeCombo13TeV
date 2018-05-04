@@ -747,9 +747,9 @@ void RootPlotter::PlotHistos(const char* psfilename)
 	  
 	  if (histname.EndsWith("_lx")){
 	    gPad->SetLogx(1);
+	    FirstHist->SetMinimum(0.001);
 	  }
 	  
-	  FirstHist->SetMinimum(0.001);
 	  if (TotMax>0){
 	    if (FirstHist->GetMaximum() != 0){
 	      FirstHist->SetMaximum(MaxScale*TotMax);
